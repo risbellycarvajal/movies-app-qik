@@ -44,7 +44,10 @@
 		"node": ">=18"
 	},
 	"lint-staged": {
-		"src/**/*.{ts,tsx}": ["eslint --ext .tsx --ext .ts src/ --fix"],
+		"src/**/*.{ts,tsx}": [
+			"eslint --ext .tsx --ext .ts src/ --fix",
+			"jest --bail --onlyChanged --testPathIgnorePatterns"
+		],
 		"./src/**": ["prettier --write ./src"]
 	},
 	"husky": {
