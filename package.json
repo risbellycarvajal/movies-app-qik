@@ -30,6 +30,8 @@
         "@react-native/eslint-config": "0.73.2",
         "@react-native/metro-config": "0.73.5",
         "@react-native/typescript-config": "0.73.1",
+        "@testing-library/react-native": "^12.4.3",
+        "@types/jest": "^29.5.12",
         "@types/react": "^18.2.6",
         "@types/react-test-renderer": "^18.0.0",
         "@typescript-eslint/eslint-plugin": "^7.2.0",
@@ -53,10 +55,10 @@
     "lint-staged": {
         "src/**/*.{ts,tsx}": [
             "eslint --ext .tsx --ext .ts src/ --fix",
-            "jest --bail --onlyChanged --testPathIgnorePatterns --passWithNoTests"
+            "jest --bail --onlyChanged"
         ],
-        "./src/**": [
-            "prettier --write ./src"
+        "./src/**/!(*.snap)": [
+            "prettier --write"
         ]
     },
     "husky": {

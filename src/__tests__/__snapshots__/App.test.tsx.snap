@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly 1`] = `
+<RCTSafeAreaView>
+  <View>
+    <View>
+      <RCTScrollView
+        data={
+          [
+            {
+              "id": 1011985,
+              "posterPath": "/bqe5pdLIoLeZSszA8N5ZvoIS4aB.jpg",
+              "releaseDate": "2024-03-02",
+              "title": "Kung Fu Panda 4",
+              "voteAverage": 6.942,
+            },
+            {
+              "id": 848538,
+              "posterPath": "/aSm3b2gaDTnt35RekjEEanxIusg.jpg",
+              "releaseDate": "2024-01-31",
+              "title": "Argylle",
+              "voteAverage": 6.128,
+            },
+            {
+              "id": 792307,
+              "posterPath": "/mm1M6CoN2qLy8BpnrmYEVToQHJR.jpg",
+              "releaseDate": "2023-12-07",
+              "title": "Pobres criaturas",
+              "voteAverage": 7.905,
+            },
+            {
+              "id": 693134,
+              "posterPath": "/v2NN1TMK3ifuiEyawa3ukkcSOUQ.jpg",
+              "releaseDate": "2024-02-27",
+              "title": "Dune: Parte dos",
+              "voteAverage": 8.4,
+            },
+            {
+              "id": 1096197,
+              "posterPath": "/fSY6BYUZMObTIzPfRBlhuAb5lsd.jpg",
+              "releaseDate": "2024-01-18",
+              "title": "Atrapados en lo profundo",
+              "voteAverage": 6.111,
+            },
+            {
+              "id": 1046090,
+              "posterPath": "/aqfS8ZHWq9UY52XRZXVmwBHB2r8.jpg",
+              "releaseDate": "2023-10-06",
+              "title": "El cerdo, la serpiente y la paloma",
+              "voteAverage": 7.6,
+            },
+            {
+              "id": 1239251,
+              "posterPath": "/1N7terrMeZPwK5qq31MUD0HQ3IG.jpg",
+              "releaseDate": "2024-03-01",
+              "title": "Megamind contra el sindicato del mal",
+              "voteAverage": 5.606,
+            },
+            {
+              "id": 763215,
+              "posterPath": "/6tJWxRfBKWGIPFkfLTod2CgCexU.jpg",
+              "releaseDate": "2024-03-08",
+              "title": "Damsel",
+              "voteAverage": 7.304,
+            },
+            {
+              "id": 872585,
+              "posterPath": "/ncKCQVXgk4BcQV6XbvesgZ2zLvZ.jpg",
+              "releaseDate": "2023-07-19",
+              "title": "Oppenheimer",
+              "voteAverage": 8.118,
+            },
+            {
+              "id": 932420,
+              "posterPath": "/b00zs9USt7Qwd1po8Dm5tt0JUU9.jpg",
+              "releaseDate": "2024-02-27",
+              "title": "Código 8 (Parte 2)",
+              "voteAverage": 6.6,
+            },
+            {
+              "id": 508883,
+              "posterPath": "/cUZop9T440Bx25P8Ptc0qXkLYEa.jpg",
+              "releaseDate": "2023-07-14",
+              "title": "El chico y la garza",
+              "voteAverage": 7.48,
+            },
+            {
+              "id": 940551,
+              "posterPath": "/brAqSBoSXzxEYV6rGYwbRvhlXCE.jpg",
+              "releaseDate": "2023-12-06",
+              "title": "Migración: un viaje patas arriba",
+              "voteAverage": 7.554,
+            },
+            {
+              "id": 969492,
+              "posterPath": "/syKwepJwzvoYhPLBfUy4YYSrstr.jpg",
+              "releaseDate": "2024-01-25",
+              "title": "Rescate imposible",
+              "voteAverage": 6.953,
+            },
+            {
+              "id": 438631,
+              "posterPath": "/hIEKzq0klqtz1H3S7QxzH4mMbvT.jpg",
+              "releaseDate": "2021-09-15",
+              "title": "Dune",
+              "voteAverage": 7.788,
+            },
+            {
+              "id": 1072790,
+              "posterPath": "/gvpU4eMgDC6LpWLxnqGW3uMFDx3.jpg",
+              "releaseDate": "2023-12-21",
+              "title": "Cualquiera menos tú",
+              "voteAverage": 7.042,
+            },
+            {
+              "id": 1094556,
+              "posterPath": "/u9F0QlZwwecGE9eHaaGKzx3pSS0.jpg",
+              "releaseDate": "2024-03-07",
+              "title": "El retorno de los Thunderman",
+              "voteAverage": 7.744,
+            },
+            {
+              "id": 1227816,
+              "posterPath": "/vfEG79SQIg3p6B8rBLVeIo2BBhb.jpg",
+              "releaseDate": "2024-02-22",
+              "title": "Red Right Hand",
+              "voteAverage": 6.981,
+            },
+            {
+              "id": 866398,
+              "posterPath": "/9X8EhbSpYrf6pGFGttWtVDAs9Hr.jpg",
+              "releaseDate": "2024-01-08",
+              "title": "Beekeeper: El protector",
+              "voteAverage": 7.467,
+            },
+            {
+              "id": 944401,
+              "posterPath": "/iQqFJ7It6NlCWY16T9EuBsx3sQP.jpg",
+              "releaseDate": "2023-09-27",
+              "title": "Dogman",
+              "voteAverage": 7.571,
+            },
+            {
+              "id": 636706,
+              "posterPath": "/q4G7NXuQ0hDCdO6PUQswyU0VDiF.jpg",
+              "releaseDate": "2024-02-23",
+              "title": "El astronauta",
+              "voteAverage": 6.7,
+            },
+          ]
+        }
+        getItem={[Function]}
+        getItemCount={[Function]}
+        keyExtractor={[Function]}
+        onContentSizeChange={[Function]}
+        onLayout={[Function]}
+        onMomentumScrollBegin={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={0.0001}
+        stickyHeaderIndices={
+          [
+            0,
+          ]
+        }
+        testID="movies-list"
+        viewabilityConfigCallbackPairs={[]}
+      >
+        <View>
+          <View
+            onFocusCapture={[Function]}
+            onLayout={[Function]}
+            style={null}
+          >
+            <Text>
+              Kung Fu Panda 4
+            </Text>
+          </View>
+          <View
+            onFocusCapture={[Function]}
+            onLayout={[Function]}
+            style={null}
+          >
+            <Text>
+              Argylle
+            </Text>
+          </View>
+          <View
+            onFocusCapture={[Function]}
+            onLayout={[Function]}
+            style={null}
+          >
+            <Text>
+              Pobres criaturas
+            </Text>
+          </View>
+          <View
+            onFocusCapture={[Function]}
+            onLayout={[Function]}
+            style={null}
+          >
+            <Text>
+              Dune: Parte dos
+            </Text>
+          </View>
+          <View
+            onFocusCapture={[Function]}
+            onLayout={[Function]}
+            style={null}
+          >
+            <Text>
+              Atrapados en lo profundo
+            </Text>
+          </View>
+          <View
+            onFocusCapture={[Function]}
+            onLayout={[Function]}
+            style={null}
+          >
+            <Text>
+              El cerdo, la serpiente y la paloma
+            </Text>
+          </View>
+          <View
+            onFocusCapture={[Function]}
+            onLayout={[Function]}
+            style={null}
+          >
+            <Text>
+              Megamind contra el sindicato del mal
+            </Text>
+          </View>
+          <View
+            onFocusCapture={[Function]}
+            onLayout={[Function]}
+            style={null}
+          >
+            <Text>
+              Damsel
+            </Text>
+          </View>
+          <View
+            onFocusCapture={[Function]}
+            onLayout={[Function]}
+            style={null}
+          >
+            <Text>
+              Oppenheimer
+            </Text>
+          </View>
+          <View
+            onFocusCapture={[Function]}
+            onLayout={[Function]}
+            style={null}
+          >
+            <Text>
+              Código 8 (Parte 2)
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "height": 0,
+              }
+            }
+          />
+        </View>
+      </RCTScrollView>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;

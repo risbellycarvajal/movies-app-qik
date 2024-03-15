@@ -1,23 +1,10 @@
 import type { FC } from 'react';
-import { useCallback, useEffect, useState } from 'react';
-import {
-    ActivityIndicator,
-    FlatList,
-    SafeAreaView,
-    Text,
-    useColorScheme,
-    View
-} from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-import { getMovies } from './services';
 import type { Movies } from './types';
+import { useCallback, useEffect, useState } from 'react';
+import { ActivityIndicator, FlatList, SafeAreaView, Text, View } from 'react-native';
+import { getMovies } from './services';
 
 const App: FC = () => {
-    const isDarkMode = useColorScheme() === 'dark';
-
-    const backgroundStyle = {
-        backgroundColor: isDarkMode ? Colors.darker : Colors.lighter
-    };
     const [movies, setMovies] = useState<Movies>();
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -39,7 +26,7 @@ const App: FC = () => {
     }, []);
 
     return (
-        <SafeAreaView style={backgroundStyle}>
+        <SafeAreaView>
             <View>
                 {loading ? (
                     <ActivityIndicator />
@@ -47,6 +34,7 @@ const App: FC = () => {
                     movies && (
                         <View>
                             <FlatList
+                                testID="movies-list"
                                 data={movies}
                                 stickyHeaderIndices={[0]}
                                 renderItem={({ item }) => <Text>{item.title}</Text>}
