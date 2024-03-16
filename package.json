@@ -65,7 +65,7 @@
             "jest --bail --onlyChanged"
         ],
         "./src/**/!(*.snap)": [
-            "prettier --write src/**/*.{ts,tsx}"
+            "prettier --write"
         ]
     },
     "husky": {
