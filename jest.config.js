@@ -1,4 +1,7 @@
 module.exports = {
     preset: 'react-native',
-    transformIgnorePatterns: ['node_modules/(?!(jest-)?@?react-native)']
+    setupFiles: ['./jestSetupFile.ts'],
+    transformIgnorePatterns: [
+        'node_modules/(?!(jest-)?@?react-native|@react-navigation|@react-native-community)'
+    ]
 };

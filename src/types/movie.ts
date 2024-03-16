@@ -26,6 +26,7 @@ export type MovieApiResponse = {
     video: boolean;
     vote_average: number;
     vote_count: number;
+    credits: Credits;
 };
 
 export type Genre = {
@@ -33,12 +34,12 @@ export type Genre = {
     name: string;
 };
 
-export type Actor = {
+export interface Actor {
     name: string;
     id: number;
     character: string;
     profilePath: string;
-};
+}
 
 export interface Movie {
     id: number;
@@ -52,3 +53,15 @@ export interface Movie {
 }
 
 export type Movies = Movie[];
+
+export interface Credits {
+    cast: Cast[];
+}
+
+export interface Cast {
+    gender: number;
+    id: number;
+    name: string;
+    profile_path: null | string;
+    character?: string;
+}
