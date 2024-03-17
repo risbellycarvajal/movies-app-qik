@@ -2,9 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Movie, Movies } from '../types';
 
-export type FavoriteMoviesState = {
+export interface FavoriteMoviesState {
     favoriteMovies: Movies;
-};
+}
 
 const initialState: FavoriteMoviesState = {
     favoriteMovies: []

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '../store/store';
-import { addFavorite, removeFavorite } from '../reducers/favoriteMovies';
+import { addFavorite, removeFavorite } from '../reducers/favoritesMovies';
 
 const useFavoriteMovies = (movieId?: number) => {
     const favoriteMovies = useSelector((state: RootState) => state.favoriteMovies.favoriteMovies);

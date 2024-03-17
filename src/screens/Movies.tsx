@@ -1,7 +1,7 @@
 import { useEffect, type FC } from 'react';
 import type { MoviesScreenProp } from '../types';
 import { ActivityIndicator, SafeAreaView, Text, View } from 'react-native';
-import { MovieCard, ListHeader } from '../components';
+import { MovieCard, MoviesListChoice } from '../components';
 import { FlatList } from 'react-native-gesture-handler';
 import { useFavoriteMovies, useMovies } from '../hooks';
 import { moviesStyles as styles } from './styles';
@@ -22,6 +22,7 @@ const MoviesScreen: FC<MoviesScreenProp> = ({ navigation }) => {
                 sortedMovies && (
                     <View>
                         <Text style={styles.title}>Movies APP</Text>
+                        <Text style={styles.subtitle}>Estrenos</Text>
                         <FlatList
                             testID="movies-list"
                             style={styles.flatList}
@@ -39,9 +40,9 @@ const MoviesScreen: FC<MoviesScreenProp> = ({ navigation }) => {
                             horizontal
                             showsHorizontalScrollIndicator={false}
                         />
-                        <ListHeader
-                            nowPlayingTab={() => setSelectedList('nowPlaying')}
-                            favoriteMoviesTab={() => setSelectedList('favoriteMovies')}
+                        <MoviesListChoice
+                            nowPlayingBtn={() => setSelectedList('nowPlaying')}
+                            favoritesBtn={() => setSelectedList('favoriteMovies')}
                         />
                     </View>
                 )

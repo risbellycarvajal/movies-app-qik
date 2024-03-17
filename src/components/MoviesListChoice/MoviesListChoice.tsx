@@ -1,17 +1,16 @@
 import type { FC } from 'react';
-import { useState } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import { CustomAlert } from '../../utils';
 import { styles } from './styles';
-import { useFavoriteMovies } from '../../hooks';
+import { useFavoriteMovies, useMovies } from '../../hooks';
 
-interface ListHeaderProps {
-    nowPlayingTab: () => void;
-    favoriteMoviesTab: () => void;
+interface MoviesListChoiceProps {
+    nowPlayingBtn: () => void;
+    favoritesBtn: () => void;
 }
 
-const ListHeader: FC<ListHeaderProps> = ({ nowPlayingTab, favoriteMoviesTab }) => {
-    const [selectedTab, setSelectedTab] = useState('nowPlaying');
+const MoviesListChoice: FC<MoviesListChoiceProps> = ({ nowPlayingBtn, favoritesBtn }) => {
+    const { selectedList, setSelectedList } = useMovies();
     const { favoriteMovies } = useFavoriteMovies();
 
     return (
@@ -19,9 +18,9 @@ const ListHeader: FC<ListHeaderProps> = ({ nowPlayingTab, favoriteMoviesTab }) =
             <TouchableOpacity
                 style={styles.button}
                 onPress={() => {
-                    if (selectedTab !== 'nowPlaying') {
-                        setSelectedTab('nowPlaying');
-                        nowPlayingTab();
+                    if (selectedList !== 'nowPlaying') {
+                        setSelectedList('nowPlaying');
+                        nowPlayingBtn();
                     }
                 }}>
                 <Text style={styles.text}>Peliculas</Text>
@@ -29,10 +28,10 @@ const ListHeader: FC<ListHeaderProps> = ({ nowPlayingTab, favoriteMoviesTab }) =
             <TouchableOpacity
                 style={styles.button}
                 onPress={() => {
-                    if (selectedTab !== 'favoriteMovies') {
+                    if (selectedList !== 'favoriteMovies') {
                         if (favoriteMovies.length > 0) {
-                            setSelectedTab('favoriteMovies');
-                            favoriteMoviesTab();
+                            setSelectedList('favoriteMovies');
+                            favoritesBtn();
                         } else {
                             CustomAlert({
                                 title: 'Favoritas',
@@ -48,4 +47,4 @@ const ListHeader: FC<ListHeaderProps> = ({ nowPlayingTab, favoriteMoviesTab }) =
     );
 };
 
-export default ListHeader;
+export default MoviesListChoice;
