@@ -3,7 +3,7 @@ import { View, StyleSheet, Dimensions } from 'react-native';
 const { width } = Dimensions.get('window');
 
 const Divider = () => {
-    return <View style={styles.divider} />;
+    return <View testID="divider" style={styles.divider} />;
 };
 
 const styles = StyleSheet.create({

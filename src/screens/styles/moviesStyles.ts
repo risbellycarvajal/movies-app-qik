@@ -32,6 +32,12 @@ export const moviesStyles = StyleSheet.create({
         fontSize: 36,
         textAlign: 'center',
         fontWeight: 'bold',
-        marginBottom: 30
+        marginBottom: 10
+    },
+    subtitle: {
+        fontSize: 26,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 20
     }
 });
