@@ -16,7 +16,6 @@ export const isSessionActive = (session: GuestSession): boolean => {
 export const getGuestSession = async (): Promise<GuestSession> => {
     try {
         const data = await AsyncStorage.getItem(APP_STORAGE_KEY);
-
         if (data) {
             return JSON.parse(data);
         } else {

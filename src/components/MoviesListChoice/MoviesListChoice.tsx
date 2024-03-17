@@ -34,8 +34,8 @@ const MoviesListChoice: FC<MoviesListChoiceProps> = ({ nowPlayingBtn, favoritesB
                             favoritesBtn();
                         } else {
                             CustomAlert({
-                                title: 'Favoritas',
-                                description: 'No tienes peliculas favoritas',
+                                title: 'Peliculas favoritas',
+                                description: 'No tienes peliculas anadidas a favoritas.',
                                 buttonText: 'Ok'
                             });
                         }

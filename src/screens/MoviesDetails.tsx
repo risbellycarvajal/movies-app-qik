@@ -27,7 +27,7 @@ const MoviesDetails: React.FC<MoviesDetailsScreenProp> = ({ route }) => {
     if (!movie) {
         return (
             <View style={styles.centered}>
-                <Text>No movie details available.</Text>
+                <Text>No hay detalles disponibles para mostrar.</Text>
             </View>
         );
     }
