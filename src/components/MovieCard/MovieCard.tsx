@@ -1,8 +1,10 @@
 import type { FC } from 'react';
-import React, { useState } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import type { Movie } from '../../types';
 import { FavButton, StarRating } from '..';
+import { useFavoriteMovies } from '../../hooks';
+import { formatDate } from '../../utils';
+import { API_BASE_IMAGE_URL } from '@env';
 
 interface MovieCardProps {
     movie: Movie;
@@ -10,23 +12,28 @@ interface MovieCardProps {
 }
 
 const MovieCard: FC<MovieCardProps> = ({ movie, onPress }) => {
-    const [isFavorite, setIsFavorite] = useState(false);
-
-    const toggleFavorite = () => {
-        setIsFavorite(!isFavorite);
-    };
+    const { isFavorite, addFavorite, removeFavorite, dispatch } = useFavoriteMovies(movie.id);
 
     return (
         <TouchableOpacity onPress={onPress} activeOpacity={0.6}>
             <View style={styles.card}>
-                <FavButton isFavorite={isFavorite} toggleFavorite={toggleFavorite} />
+                <FavButton
+                    isFavorite={isFavorite}
+                    toggleFavorite={() => {
+                        if (isFavorite) {
+                            dispatch(removeFavorite(movie));
+                        } else {
+                            dispatch(addFavorite(movie));
+                        }
+                    }}
+                />
                 <Image
-                    source={{ uri: `https://image.tmdb.org/t/p/w500${movie.posterPath}` }}
+                    source={{ uri: `${API_BASE_IMAGE_URL}${movie.posterPath}` }}
                     style={styles.image}
                 />
                 <Text style={styles.title}>{movie.title}</Text>
                 <StarRating voteAverage={movie.voteAverage} />
-                <Text style={styles.date}>{movie.releaseDate}</Text>
+                <Text style={styles.date}>{formatDate(movie.releaseDate)}</Text>
             </View>
         </TouchableOpacity>
     );

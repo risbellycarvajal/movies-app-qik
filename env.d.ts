@@ -2,4 +2,6 @@ declare module '@env' {
     export const API_KEY: string;
     export const API_BASE_URL: string;
     export const AUTH_API_BASE_URL: string;
+    export const API_BASE_IMAGE_URL: string;
+    export const API_LANGUAGE: string;
 }
