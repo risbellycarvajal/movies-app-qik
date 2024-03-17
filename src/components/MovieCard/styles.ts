@@ -19,23 +19,26 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-
     image: {
         width: '100%',
         height: 250,
         borderRadius: 8
     },
-
     title: {
         fontWeight: 'bold',
         textAlign: 'center',
         marginTop: 8,
         fontSize: 16
     },
-
     date: {
         fontSize: 14,
         color: '#666',
         marginTop: 4
+    },
+    button: {
+        paddingTop: 10,
+        paddingBottom: 10,
+        paddingLeft: 4,
+        paddingRight: 3
     }
 });

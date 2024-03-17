@@ -16,7 +16,11 @@ const MovieCard: FC<MovieCardProps> = ({ movie, onPress }) => {
     const { isFavorite, addFavorite, removeFavorite, dispatch } = useFavoriteMovies(movie.id);
 
     return (
-        <TouchableOpacity testID="movie-card" onPress={onPress} activeOpacity={0.6}>
+        <TouchableOpacity
+            style={styles.button}
+            testID="movie-card"
+            onPress={onPress}
+            activeOpacity={0.6}>
             <View style={styles.card}>
                 <FavButton
                     isFavorite={isFavorite}

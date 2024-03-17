@@ -1,12 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 export const moviesStyles = StyleSheet.create({
-    flatList: {
-        paddingBottom: 15,
-        paddingLeft: 15,
-        paddingRight: 15,
-        paddingTop: 7
-    },
     list: {
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -39,5 +33,15 @@ export const moviesStyles = StyleSheet.create({
         textAlign: 'center',
         fontWeight: 'bold',
         marginBottom: 20
+    },
+    centered: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    movieList: {
+        paddingLeft: 10,
+        paddingRight: 10,
+        marginRight: 10
     }
 });

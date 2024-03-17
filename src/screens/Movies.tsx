@@ -14,39 +14,49 @@ const MoviesScreen: FC<MoviesScreenProp> = ({ navigation }) => {
         if (favoriteMovies.length < 1) setSelectedList('nowPlaying');
     }, [favoriteMovies]);
 
+    if (loading) {
+        return (
+            <View style={styles.centered}>
+                <ActivityIndicator size="large" />
+            </View>
+        );
+    }
+
+    if (!sortedMovies) {
+        return (
+            <View style={styles.centered}>
+                <Text>No hay peliculas para mostrar.</Text>
+            </View>
+        );
+    }
+
     return (
         <SafeAreaView style={styles.container}>
-            {loading ? (
-                <ActivityIndicator />
-            ) : (
-                sortedMovies && (
-                    <View>
-                        <Text style={styles.title}>Movies APP</Text>
-                        <Text style={styles.subtitle}>Estrenos</Text>
-                        <FlatList
-                            testID="movies-list"
-                            style={styles.flatList}
-                            data={selectedList == 'nowPlaying' ? sortedMovies : favoriteMovies}
-                            renderItem={({ item }) => (
-                                <MovieCard
-                                    key={item.id}
-                                    movie={item}
-                                    onPress={() => {
-                                        navigation.navigate('MoviesDetails', { movieId: item.id });
-                                    }}
-                                />
-                            )}
-                            keyExtractor={(item) => item.id.toString()}
-                            horizontal
-                            showsHorizontalScrollIndicator={false}
+            <View>
+                <Text style={styles.title}>Movies APP</Text>
+                <Text style={styles.subtitle}>Estrenos</Text>
+                <FlatList
+                    style={styles.movieList}
+                    testID="movies-list"
+                    data={selectedList == 'nowPlaying' ? sortedMovies : favoriteMovies}
+                    renderItem={({ item }) => (
+                        <MovieCard
+                            key={item.id}
+                            movie={item}
+                            onPress={() => {
+                                navigation.navigate('MoviesDetails', { movieId: item.id });
+                            }}
                         />
-                        <MoviesListChoice
-                            nowPlayingBtn={() => setSelectedList('nowPlaying')}
-                            favoritesBtn={() => setSelectedList('favoriteMovies')}
-                        />
-                    </View>
-                )
-            )}
+                    )}
+                    keyExtractor={(item) => item.id.toString()}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                />
+                <MoviesListChoice
+                    nowPlayingBtn={() => setSelectedList('nowPlaying')}
+                    favoritesBtn={() => setSelectedList('favoriteMovies')}
+                />
+            </View>
         </SafeAreaView>
     );
 };

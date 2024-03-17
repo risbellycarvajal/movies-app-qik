@@ -36,6 +36,7 @@ const MovieRating: FC<MovieRatingProps> = ({ movieId }) => {
         <View style={{ flexDirection: 'row' }}>
             {Array.from({ length: MAX_RATING }, (_, index) => (
                 <TouchableOpacity
+                    key={index}
                     onPressIn={() => setHoverRating((index + 1) * 2)}
                     onPressOut={() => setHoverRating(0)}
                     onPress={() => handleRating(index)}>

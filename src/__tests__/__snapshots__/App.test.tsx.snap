@@ -534,10 +534,9 @@ exports[`App renders correctly 1`] = `
                             stickyHeaderIndices={[]}
                             style={
                               {
-                                "paddingBottom": 15,
-                                "paddingLeft": 15,
-                                "paddingRight": 15,
-                                "paddingTop": 7,
+                                "marginRight": 10,
+                                "paddingLeft": 10,
+                                "paddingRight": 10,
                               }
                             }
                             testID="movies-list"
@@ -597,6 +596,10 @@ exports[`App renders correctly 1`] = `
                                   style={
                                     {
                                       "opacity": 1,
+                                      "paddingBottom": 10,
+                                      "paddingLeft": 4,
+                                      "paddingRight": 3,
+                                      "paddingTop": 10,
                                     }
                                   }
                                   testID="movie-card"
@@ -861,6 +864,10 @@ exports[`App renders correctly 1`] = `
                                   style={
                                     {
                                       "opacity": 1,
+                                      "paddingBottom": 10,
+                                      "paddingLeft": 4,
+                                      "paddingRight": 3,
+                                      "paddingTop": 10,
                                     }
                                   }
                                   testID="movie-card"
@@ -1125,6 +1132,10 @@ exports[`App renders correctly 1`] = `
                                   style={
                                     {
                                       "opacity": 1,
+                                      "paddingBottom": 10,
+                                      "paddingLeft": 4,
+                                      "paddingRight": 3,
+                                      "paddingTop": 10,
                                     }
                                   }
                                   testID="movie-card"
@@ -1389,6 +1400,10 @@ exports[`App renders correctly 1`] = `
                                   style={
                                     {
                                       "opacity": 1,
+                                      "paddingBottom": 10,
+                                      "paddingLeft": 4,
+                                      "paddingRight": 3,
+                                      "paddingTop": 10,
                                     }
                                   }
                                   testID="movie-card"
@@ -1653,6 +1668,10 @@ exports[`App renders correctly 1`] = `
                                   style={
                                     {
                                       "opacity": 1,
+                                      "paddingBottom": 10,
+                                      "paddingLeft": 4,
+                                      "paddingRight": 3,
+                                      "paddingTop": 10,
                                     }
                                   }
                                   testID="movie-card"
@@ -1917,6 +1936,10 @@ exports[`App renders correctly 1`] = `
                                   style={
                                     {
                                       "opacity": 1,
+                                      "paddingBottom": 10,
+                                      "paddingLeft": 4,
+                                      "paddingRight": 3,
+                                      "paddingTop": 10,
                                     }
                                   }
                                   testID="movie-card"
@@ -2181,6 +2204,10 @@ exports[`App renders correctly 1`] = `
                                   style={
                                     {
                                       "opacity": 1,
+                                      "paddingBottom": 10,
+                                      "paddingLeft": 4,
+                                      "paddingRight": 3,
+                                      "paddingTop": 10,
                                     }
                                   }
                                   testID="movie-card"
@@ -2445,6 +2472,10 @@ exports[`App renders correctly 1`] = `
                                   style={
                                     {
                                       "opacity": 1,
+                                      "paddingBottom": 10,
+                                      "paddingLeft": 4,
+                                      "paddingRight": 3,
+                                      "paddingTop": 10,
                                     }
                                   }
                                   testID="movie-card"
@@ -2709,6 +2740,10 @@ exports[`App renders correctly 1`] = `
                                   style={
                                     {
                                       "opacity": 1,
+                                      "paddingBottom": 10,
+                                      "paddingLeft": 4,
+                                      "paddingRight": 3,
+                                      "paddingTop": 10,
                                     }
                                   }
                                   testID="movie-card"
@@ -2973,6 +3008,10 @@ exports[`App renders correctly 1`] = `
                                   style={
                                     {
                                       "opacity": 1,
+                                      "paddingBottom": 10,
+                                      "paddingLeft": 4,
+                                      "paddingRight": 3,
+                                      "paddingTop": 10,
                                     }
                                   }
                                   testID="movie-card"
