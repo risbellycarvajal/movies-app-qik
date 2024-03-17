@@ -18,8 +18,8 @@ describe('ErrorBoundary', () => {
             </ErrorBoundary>
         );
 
-        expect(getByText('Something went wrong.')).toBeTruthy();
-        expect(getByText('Please, try again later.')).toBeTruthy();
+        expect(getByText('Ha ocurrido un error.')).toBeTruthy();
+        expect(getByText('Por favor, intente de nuevo mas tarde.')).toBeTruthy();
 
         console.error = consoleError;
     });

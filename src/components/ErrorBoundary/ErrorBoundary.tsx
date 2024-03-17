@@ -31,8 +31,8 @@ class ErrorBoundary extends Component<Props, State> {
         if (this.state.hasError) {
             return (
                 <View style={styles.center}>
-                    <Text>Something went wrong.</Text>
-                    <Text>Please, try again later.</Text>
+                    <Text>Ha ocurrido un error.</Text>
+                    <Text>Por favor, intente de nuevo mas tarde.</Text>
                 </View>
             );
         }

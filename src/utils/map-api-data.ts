@@ -25,7 +25,7 @@ export const mapApiMovieData = (data: MovieApiResponse): Movie => {
 };
 
 export const mapApiMovieDetailsData = (data: MovieApiResponse): Movie => {
-    const { id, title, release_date, vote_average, poster_path, overview, credits } = data;
+    const { id, title, release_date, vote_average, poster_path, overview, credits, genres } = data;
     const actors = credits ? mapApiCreditsData(credits) : [];
     return {
         id: id,
@@ -34,6 +34,7 @@ export const mapApiMovieDetailsData = (data: MovieApiResponse): Movie => {
         voteAverage: vote_average,
         posterPath: poster_path,
         overview: overview,
+        genres: genres,
         actors
     };
 };

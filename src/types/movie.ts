@@ -14,7 +14,7 @@ export type Dates = {
 export type MovieApiResponse = {
     adult: boolean;
     backdrop_path: string;
-    genre_ids: number[];
+    genres: Genre[];
     id: number;
     original_language: string;
     original_title: string;

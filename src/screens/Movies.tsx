@@ -1,46 +1,31 @@
-import type { FC } from 'react';
-import type { Movies, MoviesScreenProp } from '../types';
-import { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator, SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import { getMovies } from '../services';
-import { MovieCard } from '../components';
-import { sortMovies } from '../utils/sort-movies';
+import { useEffect, type FC } from 'react';
+import type { MoviesScreenProp } from '../types';
+import { ActivityIndicator, SafeAreaView, Text, View } from 'react-native';
+import { MovieCard, ListHeader } from '../components';
 import { FlatList } from 'react-native-gesture-handler';
+import { useFavoriteMovies, useMovies } from '../hooks';
+import { moviesStyles as styles } from './styles';
 
 const MoviesScreen: FC<MoviesScreenProp> = ({ navigation }) => {
-    const [movies, setMovies] = useState<Movies>();
-    const [loading, setLoading] = useState<boolean>(false);
-
-    const handleGetMovies = useCallback(async () => {
-        setLoading(true);
-        await getMovies()
-            .then((movies) => {
-                setMovies(movies);
-                setLoading(false);
-            })
-            .catch((err) => {
-                setLoading(false);
-                console.log('Error', err);
-            });
-    }, []);
+    const { loading, sortedMovies, selectedList, setSelectedList } = useMovies();
+    const { favoriteMovies } = useFavoriteMovies();
 
     useEffect(() => {
-        handleGetMovies();
-    }, []);
+        if (favoriteMovies.length < 1) setSelectedList('nowPlaying');
+    }, [favoriteMovies]);
 
-    const sortedMovies = sortMovies(movies!);
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
             {loading ? (
                 <ActivityIndicator />
             ) : (
                 sortedMovies && (
                     <View>
-                        <Text style={styles.text1}>Reproduciendose ahora</Text>
+                        <Text style={styles.title}>Movies APP</Text>
                         <FlatList
                             testID="movies-list"
                             style={styles.flatList}
-                            data={movies}
+                            data={selectedList == 'nowPlaying' ? sortedMovies : favoriteMovies}
                             renderItem={({ item }) => (
                                 <MovieCard
                                     key={item.id}
@@ -54,25 +39,15 @@ const MoviesScreen: FC<MoviesScreenProp> = ({ navigation }) => {
                             horizontal
                             showsHorizontalScrollIndicator={false}
                         />
+                        <ListHeader
+                            nowPlayingTab={() => setSelectedList('nowPlaying')}
+                            favoriteMoviesTab={() => setSelectedList('favoriteMovies')}
+                        />
                     </View>
                 )
             )}
         </SafeAreaView>
     );
 };
-
-const styles = StyleSheet.create({
-    flatList: {
-        paddingBottom: 15,
-        paddingLeft: 15,
-        paddingRight: 15,
-        paddingTop: 7
-    },
-    text1: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        margin: 10
-    }
-});
 
 export default MoviesScreen;

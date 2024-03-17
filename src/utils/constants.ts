@@ -1,2 +1,3 @@
-export const API_LANGUAGE = 'es';
+export const LANGUAGE = 'es';
 export const PAGE = 1;
+export const APP_STORAGE_KEY = 'AppGuestSession';
