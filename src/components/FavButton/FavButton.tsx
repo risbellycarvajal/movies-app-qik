@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 
-export interface FavButtonProps {
+interface FavButtonProps {
     isFavorite: boolean;
     toggleFavorite: () => void;
 }

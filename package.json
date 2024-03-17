@@ -68,7 +68,7 @@
     "lint-staged": {
         "src/**/*.{ts,tsx}": [
             "eslint --ext .tsx --ext .ts src/ --fix",
-            "jest --bail --onlyChanged"
+            "jest --bail --onlyChanged --passWithNoTests"
         ],
         "./src/**/!(*.snap)": [
             "prettier --write"
