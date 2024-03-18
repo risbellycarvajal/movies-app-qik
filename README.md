@@ -24,7 +24,7 @@ Esta aplicación consta de dos pantallas principales: `listado de películas en 
 
 ## Pre-requisitos
 
--   [Java](https://www.oracle.com/java/technologies/downloads/)
+-   [Java](https://www.oracle.com/java/technologies/downloads/) >= 17 <= 20
 -   [Node.js](https://nodejs.org/en/download) >= 18
 -   [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable) >= 4.1.0
 -   [Visual Studio Code](https://code.visualstudio.com) (o cualquier otro IDE)
@@ -33,6 +33,7 @@ Esta aplicación consta de dos pantallas principales: `listado de películas en 
 -   [API Key](https://developer.themoviedb.org/docs/getting-started) de TBMD API
 
 > **Nota**: Ten en cuenta que este proyecto se creó con el **CLI de React Native** y para poder correr las aplicaciones tanto en iOS como en Android, debes tener previamente configurado tu entorno de desarrollo. Si no esta configurado, puedes seguir la guia [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup?guide=native) hasta el apartado "Creating a new application".
+
 
 ## Ejecutar el proyecto
 
@@ -73,8 +74,12 @@ yarn ios
 yarn android
 ```
 
-Si todo esta correctamente configurado, deberias ver la aplicación ejecutandose en tu emulador iOS o Android. Tambien puedes correr las aplicaciones directamente desde
+Si todo esta correctamente configurado, deberias ver la aplicación ejecutandose en tu emulador iOS o Android. 
+
+Tambien puedes correr las aplicaciones directamente desde
 Android Studio y Xcode.
+
+> Si al momento de ejecutar la aplicación aparece un error, puedes ejecutar el comando `npx react-native doctor` para saber el estado de tu entorno de desarrollo.
 
 ## Scripts
 
