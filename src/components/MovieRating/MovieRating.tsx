@@ -1,39 +1,18 @@
 import type { FC } from 'react';
-import { useState } from 'react';
 import { Image, TouchableOpacity, View } from 'react-native';
-import { rateMovie } from '../../services';
-import { CustomAlert } from '../../utils';
+import { useMovieRating } from '../../hooks';
+import { MAX_RATING } from '../../utils';
+import { styles } from './styles';
 
 interface MovieRatingProps {
     movieId: number;
 }
 
 const MovieRating: FC<MovieRatingProps> = ({ movieId }) => {
-    const [rating, setRating] = useState(0);
-    const [hoverRating, setHoverRating] = useState(0);
-    const MAX_RATING = 5;
-    const handleRating = async (starIndex: number) => {
-        const rateValue = (starIndex + 1) * 2;
-        setRating(rateValue);
-        const response = await rateMovie(movieId, rateValue);
+    const { rating, hoverRating, setHoverRating, handleRating } = useMovieRating(movieId);
 
-        if (response.success) {
-            CustomAlert({
-                title: 'Puntuacion enviada',
-                description: 'Ha calificado la pelicula correctamente',
-                buttonText: 'Ok'
-            });
-        } else {
-            CustomAlert({
-                title: 'Puntuacion fallida',
-                description:
-                    'Ha ocurrido un error al intentar calificar la pelicula. Intente nuevamente.',
-                buttonText: 'Ok'
-            });
-        }
-    };
     return (
-        <View style={{ flexDirection: 'row' }}>
+        <View style={styles.container}>
             {Array.from({ length: MAX_RATING }, (_, index) => (
                 <TouchableOpacity
                     key={index}
@@ -41,7 +20,8 @@ const MovieRating: FC<MovieRatingProps> = ({ movieId }) => {
                     onPressOut={() => setHoverRating(0)}
                     onPress={() => handleRating(index)}>
                     <Image
-                        style={{ width: 25, height: 25 }}
+                        style={styles.stars}
+                        testID="star"
                         source={
                             (hoverRating ? hoverRating : rating) >= (index + 1) * 2
                                 ? require('../../assets/star.png')

@@ -8,12 +8,12 @@ const useFavoriteMovies = (movieId?: number) => {
     const [isFavorite, setIsFavorite] = useState<boolean>(
         Boolean(favoriteMovies.find((fav) => fav.id === movieId))
     );
+    const dispatch = useDispatch();
 
     useEffect(() => {
         setIsFavorite(Boolean(favoriteMovies.find((fav) => fav.id === movieId)));
     }, [favoriteMovies]);
 
-    const dispatch = useDispatch();
     return {
         favoriteMovies,
         isFavorite,

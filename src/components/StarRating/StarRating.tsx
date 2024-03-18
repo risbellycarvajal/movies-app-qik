@@ -1,5 +1,10 @@
 import type { FC } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import type { ImageSourcePropType } from 'react-native';
+import { Image, View } from 'react-native';
+import { styles } from './styles';
+import FullImgStar from '../../assets/star.png';
+import HalfImgStar from '../../assets/half-star.png';
+import EmptyImgStar from '../../assets/empty-star.png';
 
 interface StarRatingProps {
     voteAverage: number;
@@ -8,43 +13,26 @@ interface StarRatingProps {
 
 const StarRating: FC<StarRatingProps> = ({ voteAverage, starSize = 20 }) => {
     const fullStars = Math.floor(voteAverage / 2);
-    const halfStar = voteAverage / 2 - fullStars > 0 ? 1 : 0;
+    const halfStar = (voteAverage / 2) % 1 !== 0 ? 1 : 0;
     const emptyStars = 5 - fullStars - halfStar;
+
+    const renderStars = (count: number, starPath: ImageSourcePropType, keyPrefix: string) =>
+        [...Array(count)].map((_, i) => (
+            <Image
+                testID={`${keyPrefix}-star-${i}`}
+                key={`${keyPrefix}-${i}`}
+                source={starPath}
+                style={[styles.star, { width: starSize, height: starSize }]}
+            />
+        ));
+
     return (
         <View style={styles.starsContainer}>
-            {[...Array(fullStars)].map((_, i) => (
-                <Image
-                    key={`full-${i}`}
-                    source={require('../../assets/star.png')}
-                    style={[styles.star, { width: starSize, height: starSize }]}
-                />
-            ))}
-            {halfStar > 0 && (
-                <Image
-                    source={require('../../assets/half-star.png')}
-                    style={[styles.star, { width: starSize, height: starSize }]}
-                />
-            )}
-            {[...Array(emptyStars)].map((_, i) => (
-                <Image
-                    key={`full-${i}`}
-                    source={require('../../assets/empty-star.png')}
-                    style={[styles.star, { width: starSize, height: starSize }]}
-                />
-            ))}
+            {renderStars(fullStars, FullImgStar, 'full')}
+            {halfStar > 0 && renderStars(halfStar, HalfImgStar, 'half')}
+            {renderStars(emptyStars, EmptyImgStar, 'empty')}
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    starsContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'flex-start'
-    },
-    star: {
-        marginRight: 4
-    }
-});
 
 export default StarRating;

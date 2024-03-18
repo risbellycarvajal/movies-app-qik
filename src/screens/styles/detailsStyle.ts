@@ -30,7 +30,8 @@ export const detailsStyles = StyleSheet.create({
         shadowOpacity: 0.6,
         shadowRadius: 4,
         elevation: 5,
-        borderRadius: 20
+        borderRadius: 20,
+        backgroundColor: 'white'
     },
     title: {
         fontSize: 30,

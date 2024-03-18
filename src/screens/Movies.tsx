@@ -5,14 +5,17 @@ import { MovieCard, MoviesListChoice } from '../components';
 import { FlatList } from 'react-native-gesture-handler';
 import { useFavoriteMovies, useMovies } from '../hooks';
 import { moviesStyles as styles } from './styles';
+import { CustomAlert } from '../utils';
 
 const MoviesScreen: FC<MoviesScreenProp> = ({ navigation }) => {
     const { loading, sortedMovies, selectedList, setSelectedList } = useMovies();
     const { favoriteMovies } = useFavoriteMovies();
 
     useEffect(() => {
-        if (favoriteMovies.length < 1) setSelectedList('nowPlaying');
-    }, [favoriteMovies]);
+        if (!favoriteMovies.length) {
+            setSelectedList('nowPlaying');
+        }
+    }, [favoriteMovies, setSelectedList]);
 
     if (loading) {
         return (
@@ -34,7 +37,11 @@ const MoviesScreen: FC<MoviesScreenProp> = ({ navigation }) => {
         <SafeAreaView style={styles.container}>
             <View>
                 <Text style={styles.title}>Movies APP</Text>
-                <Text style={styles.subtitle}>Películas en estreno</Text>
+                <Text style={styles.subtitle}>
+                    {selectedList === 'nowPlaying'
+                        ? 'Películas en estreno'
+                        : 'Películas favoritas '}
+                </Text>
                 <FlatList
                     style={styles.movieList}
                     testID="movies-list"
@@ -54,7 +61,17 @@ const MoviesScreen: FC<MoviesScreenProp> = ({ navigation }) => {
                 />
                 <MoviesListChoice
                     nowPlayingBtn={() => setSelectedList('nowPlaying')}
-                    favoritesBtn={() => setSelectedList('favoriteMovies')}
+                    favoritesBtn={() => {
+                        if (favoriteMovies.length === 0) {
+                            CustomAlert({
+                                title: 'Películas favoritas',
+                                description: 'No tienes películas añadidas a favoritas.',
+                                buttonText: 'Ok'
+                            });
+                        } else {
+                            setSelectedList('favoriteMovies');
+                        }
+                    }}
                 />
             </View>
         </SafeAreaView>

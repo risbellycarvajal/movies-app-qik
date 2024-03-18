@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
-import { CustomAlert } from '../../utils';
+
 import { styles } from './styles';
-import { useFavoriteMovies, useMovies } from '../../hooks';
+import { useMovies } from '../../hooks';
 
 interface MoviesListChoiceProps {
     nowPlayingBtn: () => void;
@@ -10,36 +10,23 @@ interface MoviesListChoiceProps {
 }
 
 const MoviesListChoice: FC<MoviesListChoiceProps> = ({ nowPlayingBtn, favoritesBtn }) => {
-    const { selectedList, setSelectedList } = useMovies();
-    const { favoriteMovies } = useFavoriteMovies();
+    const { setSelectedList } = useMovies();
 
     return (
         <View style={styles.container}>
             <TouchableOpacity
                 style={styles.button}
                 onPress={() => {
-                    if (selectedList !== 'nowPlaying') {
-                        setSelectedList('nowPlaying');
-                        nowPlayingBtn();
-                    }
+                    setSelectedList('nowPlaying');
+                    nowPlayingBtn();
                 }}>
-                <Text style={styles.text}>Peliculas</Text>
+                <Text style={styles.text}>Películas</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.button}
                 onPress={() => {
-                    if (selectedList !== 'favoriteMovies') {
-                        if (favoriteMovies.length > 0) {
-                            setSelectedList('favoriteMovies');
-                            favoritesBtn();
-                        } else {
-                            CustomAlert({
-                                title: 'Peliculas favoritas',
-                                description: 'No tienes peliculas anadidas a favoritas.',
-                                buttonText: 'Ok'
-                            });
-                        }
-                    }
+                    setSelectedList('favoriteMovies');
+                    favoritesBtn();
                 }}>
                 <Text style={styles.text}>Favoritas</Text>
             </TouchableOpacity>
