@@ -10,8 +10,12 @@ const Stack = createStackNavigator<RootStackParamList>();
 const AppNavigator: FC = () => {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Movies" component={MoviesScreen} />
-            <Stack.Screen name="MoviesDetails" component={MoviesDetails} />
+            <Stack.Screen name="Movies" component={MoviesScreen} options={{ title: 'Películas' }} />
+            <Stack.Screen
+                name="MoviesDetails"
+                component={MoviesDetails}
+                options={{ title: 'Información' }}
+            />
         </Stack.Navigator>
     );
 };
