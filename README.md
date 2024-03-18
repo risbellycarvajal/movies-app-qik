@@ -34,7 +34,6 @@ Esta aplicación consta de dos pantallas principales: `listado de películas en 
 
 > **Nota**: Ten en cuenta que este proyecto se creó con el **CLI de React Native** y para poder correr las aplicaciones tanto en iOS como en Android, debes tener previamente configurado tu entorno de desarrollo. Si no esta configurado, puedes seguir la guia [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup?guide=native) hasta el apartado "Creating a new application".
 
-
 ## Ejecutar el proyecto
 
 ### Paso 1: Clonar o descargar el repositorio
@@ -79,7 +78,7 @@ Si todo esta correctamente configurado, deberias ver la aplicación ejecutandose
 Tambien puedes correr las aplicaciones directamente desde
 Android Studio y Xcode.
 
-> Si al momento de ejecutar la aplicación aparece un error, puedes ejecutar el comando `npx react-native doctor` para saber el estado de tu entorno de desarrollo.
+> Si al momento de ejecutar la aplicación aparece un error, puedes ejecutar el comando `npx react-native doctor` para saber el estado de tu entorno de desarrollo. Tambien recuerda ejecutar `pod install` dentro de la carpeta `ios` para instalar/actualizar los `pod` en la build de iOS.
 
 ## Scripts
 
