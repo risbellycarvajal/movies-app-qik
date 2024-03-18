@@ -1,7 +1,8 @@
+import { useEffect } from 'react';
 import type { FC } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import { styles } from './styles';
-import { useMovies } from '../../hooks';
+import { useFavoriteMovies, useMovies } from '../../hooks';
 
 interface MoviesListChoiceProps {
     nowPlayingBtn: () => void;
@@ -9,12 +10,19 @@ interface MoviesListChoiceProps {
 }
 
 const MoviesListChoice: FC<MoviesListChoiceProps> = ({ nowPlayingBtn, favoritesBtn }) => {
-    const { setSelectedList } = useMovies();
+    const { selectedList, setSelectedList } = useMovies();
+    const { favoriteMovies } = useFavoriteMovies();
+
+    useEffect(() => {
+        if (!favoriteMovies.length) {
+            setSelectedList('nowPlaying');
+        }
+    }, [selectedList, favoriteMovies]);
 
     return (
         <View style={styles.container}>
             <TouchableOpacity
-                style={styles.button}
+                style={selectedList === 'nowPlaying' ? styles.selectedButton : styles.button}
                 onPress={() => {
                     setSelectedList('nowPlaying');
                     nowPlayingBtn();
@@ -22,7 +30,7 @@ const MoviesListChoice: FC<MoviesListChoiceProps> = ({ nowPlayingBtn, favoritesB
                 <Text style={styles.text}>Películas</Text>
             </TouchableOpacity>
             <TouchableOpacity
-                style={styles.button}
+                style={selectedList === 'favoriteMovies' ? styles.selectedButton : styles.button}
                 onPress={() => {
                     setSelectedList('favoriteMovies');
                     favoritesBtn();
