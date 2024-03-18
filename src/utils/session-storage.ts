@@ -1,7 +1,7 @@
 import { parseISO } from 'date-fns';
 import type { GuestSession } from '../types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { APP_STORAGE_KEY } from '.';
+import { APP_STORAGE_KEY } from './constants';
 
 export const isSessionActive = (session: GuestSession): boolean => {
     const [date] = session.expireDate.split(' ');

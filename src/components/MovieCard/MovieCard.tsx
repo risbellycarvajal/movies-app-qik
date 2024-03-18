@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import type { Movie } from '../../types';
-import { FavButton, StarRating } from '..';
+import FavButton from '../FavButton';
+import StarRating from '../StarRating';
 import { useFavoriteMovies } from '../../hooks';
 import { formatDate } from '../../utils';
 import { API_BASE_IMAGE_URL } from '@env';
