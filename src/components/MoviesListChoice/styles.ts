@@ -13,6 +13,13 @@ export const styles = StyleSheet.create({
         marginLeft: 10,
         width: 150
     },
+    selectedButton: {
+        backgroundColor: '#666564',
+        padding: 10,
+        borderRadius: 10,
+        marginLeft: 10,
+        width: 150
+    },
     text: {
         color: 'white',
         fontSize: 20,

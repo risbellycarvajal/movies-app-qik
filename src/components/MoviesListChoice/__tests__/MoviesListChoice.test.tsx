@@ -1,6 +1,10 @@
 import { render, fireEvent } from '@testing-library/react-native';
 import MoviesListChoice from '../MoviesListChoice';
 import { useMovies } from '../../../hooks';
+import type { RootState } from '../../../store';
+import configureStore from 'redux-mock-store';
+import { mockMovies } from '../../../__mockData__/movies.mock';
+import { Provider } from 'react-redux';
 
 jest.mock('../../../hooks', () => ({
     ...jest.requireActual('../../../hooks'),
@@ -8,6 +12,13 @@ jest.mock('../../../hooks', () => ({
 }));
 
 describe('MoviesListChoice', () => {
+    const mockStore = configureStore<RootState>([]);
+    const initialState = {
+        favoriteMovies: {
+            favoriteMovies: mockMovies
+        }
+    };
+    const store = mockStore(initialState);
     it('renders correctly', () => {
         (useMovies as jest.Mock).mockReturnValue({
             selectedList: '',
@@ -15,7 +26,9 @@ describe('MoviesListChoice', () => {
         });
 
         const { getByText } = render(
-            <MoviesListChoice nowPlayingBtn={jest.fn()} favoritesBtn={jest.fn()} />
+            <Provider store={store}>
+                <MoviesListChoice nowPlayingBtn={jest.fn()} favoritesBtn={jest.fn()} />
+            </Provider>
         );
         expect(getByText('Películas')).toBeTruthy();
         expect(getByText('Favoritas')).toBeTruthy();
@@ -31,7 +44,9 @@ describe('MoviesListChoice', () => {
         });
 
         const { getByText } = render(
-            <MoviesListChoice nowPlayingBtn={nowPlayingBtnMock} favoritesBtn={jest.fn()} />
+            <Provider store={store}>
+                <MoviesListChoice nowPlayingBtn={nowPlayingBtnMock} favoritesBtn={jest.fn()} />
+            </Provider>
         );
         fireEvent.press(getByText('Películas'));
         expect(setSelectedListMock).toHaveBeenCalledWith('nowPlaying');

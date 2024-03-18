@@ -62,7 +62,7 @@ const MoviesScreen: FC<MoviesScreenProp> = ({ navigation }) => {
                 <MoviesListChoice
                     nowPlayingBtn={() => setSelectedList('nowPlaying')}
                     favoritesBtn={() => {
-                        if (favoriteMovies.length === 0) {
+                        if (!favoriteMovies.length) {
                             CustomAlert({
                                 title: 'Películas favoritas',
                                 description: 'No tienes películas añadidas a favoritas.',

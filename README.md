@@ -114,14 +114,16 @@ Este proyecto está utilizando `eslint` y `prettier` para la identificación de 
 
 ## Imágenes de la aplicación
 
-![pantalla principal - peliculas estrenos](https://i.ibb.co/Nyk4P9P/Screenshot-2024-03-18-at-2-08-31-AM.png)
+![pantalla principal - peliculas estrenos](https://i.ibb.co/YTyZJLg/Screenshot-2024-03-18-at-2-59-32-PM.png)
 
-![pantalla principal - peliculas favoritas](https://i.ibb.co/jzgRsyZ/Screenshot-2024-03-18-at-2-09-15-AM.png)
+![pantalla principal - peliculas favoritas](https://i.ibb.co/42hgMWZ/Screenshot-2024-03-18-at-3-00-39-PM.png)
 
 ![detalle pelicula](https://i.ibb.co/nmbvnCp/Screenshot-2024-03-18-at-2-09-29-AM.png)
 
 ![detalle pelicula2](https://i.ibb.co/vJTT78b/Screenshot-2024-03-18-at-2-09-49-AM.png)
 
 ![detalle pelicula3](https://i.ibb.co/kSHQqWL/Screenshot-2024-03-18-at-2-10-04-AM.png)
+
+![calificar pelìcula](https://i.ibb.co/9Zw0qJT/Screenshot-2024-03-18-at-3-06-09-PM.png)
 
 Este proyecto ha sido creado por **Risbelly Carvajal**.
