@@ -1,6 +1,8 @@
 import { getMovieDetails } from '../services';
 import { useCallback, useEffect, useState } from 'react';
 import type { Movie } from '../types';
+import { getAxiosError } from '../utils';
+import type { AxiosError } from 'axios';
 
 const useMovieDetails = (movieId: number) => {
     const [movie, setMovie] = useState<Movie>();
@@ -13,9 +15,10 @@ const useMovieDetails = (movieId: number) => {
                 setMovie(movieDetails);
                 setLoading(false);
             })
-            .catch((error) => {
+            .catch((err: AxiosError) => {
                 setLoading(false);
-                console.log('Error', error);
+                const error = getAxiosError(err);
+                console.error('Ha ocurrido un error al obtener el detalle de la película:', error);
             });
     }, [movieId]);
 

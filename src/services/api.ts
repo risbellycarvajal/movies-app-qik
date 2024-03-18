@@ -8,6 +8,7 @@ import {
     mapApiMovieDetailsData,
     setGuestSession
 } from '../utils';
+import type { AxiosError } from 'axios';
 import axios from 'axios';
 
 export const getMovies = async (): Promise<Movies> => {
@@ -21,8 +22,7 @@ export const getMovies = async (): Promise<Movies> => {
             throw new Error('No se pudieron obtener las películas. Intente nuevamente.');
         }
     } catch (error) {
-        console.error(error);
-        throw error;
+        throw error as AxiosError;
     }
 };
 
@@ -39,8 +39,7 @@ export const getMovieDetails = async (id: number): Promise<Movie> => {
             );
         }
     } catch (error) {
-        console.error(error);
-        throw error;
+        throw error as AxiosError;
     }
 };
 
@@ -57,8 +56,7 @@ export const getRecommendedMovies = async (id: number): Promise<Movies> => {
             );
         }
     } catch (error) {
-        console.error(error);
-        throw error;
+        throw error as AxiosError;
     }
 };
 
@@ -86,8 +84,7 @@ export const rateMovie = async (movieId: number, rate: number): Promise<{ succes
             throw new Error('No se pudo calificar la pelicula');
         }
     } catch (error) {
-        console.error(error);
-        throw error;
+        throw error as AxiosError;
     }
 };
 
@@ -107,7 +104,6 @@ export const getSession = async (): Promise<GuestSession> => {
             );
         }
     } catch (error) {
-        console.error(error);
-        throw error;
+        throw error as AxiosError;
     }
 };

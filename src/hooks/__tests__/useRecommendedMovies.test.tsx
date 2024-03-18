@@ -13,6 +13,7 @@ jest.mock('../../services', () => ({
 }));
 
 jest.mock('../../utils', () => ({
+    getAxiosError: jest.fn((error) => error),
     sortMovies: jest.fn((movies) => {
         if (!movies) {
             return [];
