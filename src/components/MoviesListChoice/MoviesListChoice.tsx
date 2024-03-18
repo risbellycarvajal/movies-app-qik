@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
-
 import { styles } from './styles';
 import { useMovies } from '../../hooks';
 
