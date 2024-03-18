@@ -35,7 +35,9 @@ export const detailsStyles = StyleSheet.create({
     title: {
         fontSize: 30,
         fontWeight: 'bold',
-        marginBottom: 8
+        marginBottom: 8,
+        width: '90%',
+        color: 'black'
     },
     releaseDate: {
         fontSize: 18,
@@ -45,13 +47,15 @@ export const detailsStyles = StyleSheet.create({
     overview: {
         fontSize: 16,
         lineHeight: 24,
-        marginBottom: 15
+        marginBottom: 15,
+        color: 'black'
     },
     sectionTitle: {
         fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 10,
-        marginTop: 5
+        marginTop: 5,
+        color: 'black'
     },
     genresContainer: {
         flexDirection: 'row',
@@ -66,7 +70,8 @@ export const detailsStyles = StyleSheet.create({
         paddingVertical: 5,
         borderRadius: 15,
         overflow: 'hidden',
-        marginBottom: 6
+        marginBottom: 6,
+        color: 'black'
     },
     actorContainer: {
         marginRight: 16,
@@ -84,11 +89,13 @@ export const detailsStyles = StyleSheet.create({
     actorName: {
         fontSize: 16,
         fontWeight: 'bold',
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'black'
     },
     characterName: {
         fontSize: 14,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'black'
     },
     titleContainer: {
         marginBottom: 2
@@ -103,9 +110,13 @@ export const detailsStyles = StyleSheet.create({
     rateText: {
         fontSize: 20,
         fontWeight: 'bold',
-        marginBottom: 10
+        marginBottom: 10,
+        color: 'black'
     },
     viewRow: {
         flexDirection: 'row'
+    },
+    textCentered: {
+        textAlign: 'center'
     }
 });

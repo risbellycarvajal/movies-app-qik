@@ -26,13 +26,15 @@ export const moviesStyles = StyleSheet.create({
         fontSize: 36,
         textAlign: 'center',
         fontWeight: 'bold',
-        marginBottom: 10
+        marginBottom: 10,
+        color: 'black'
     },
     subtitle: {
         fontSize: 26,
         textAlign: 'center',
         fontWeight: 'bold',
-        marginBottom: 20
+        marginBottom: 20,
+        color: 'black'
     },
     centered: {
         flex: 1,

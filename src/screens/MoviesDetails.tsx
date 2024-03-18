@@ -67,7 +67,7 @@ const MoviesDetails: React.FC<MoviesDetailsScreenProp> = ({ route }) => {
                     {formatDate(movie.releaseDate)}
                 </Text>
             </View>
-            <Text style={styles.sectionTitle}>Generos</Text>
+            <Text style={styles.sectionTitle}>Géneros</Text>
             <View style={styles.genresContainer}>
                 {movie.genres?.map((genre) => (
                     <Text key={genre.id} style={[styles.pill, { fontWeight: '500' }]}>
@@ -99,19 +99,23 @@ const MoviesDetails: React.FC<MoviesDetailsScreenProp> = ({ route }) => {
             />
             <Divider />
             <View style={styles.rateContainer}>
-                <Text style={styles.rateText}>Califica esta pelicula</Text>
+                <Text style={styles.rateText}>Califica esta película</Text>
                 <MovieRating movieId={route.params.movieId} />
             </View>
             <Divider />
-            <Text style={styles.sectionTitle}>Peliculas similares</Text>
-            <FlatList
-                data={recommendedMovies}
-                contentContainerStyle={styles.recommmendationsContainer}
-                renderItem={({ item }) => <MovieCard key={item.id} movie={item} />}
-                keyExtractor={(item) => item.id.toString()}
-                horizontal
-                showsHorizontalScrollIndicator={false}
-            />
+            <Text style={styles.sectionTitle}>Películas recomendadas</Text>
+            {recommendedMovies && recommendedMovies?.length > 0 ? (
+                <FlatList
+                    data={recommendedMovies}
+                    contentContainerStyle={styles.recommmendationsContainer}
+                    renderItem={({ item }) => <MovieCard key={item.id} movie={item} />}
+                    keyExtractor={(item) => item.id.toString()}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                />
+            ) : (
+                <Text style={styles.textCentered}>No hay películas recomendadas para mostrar.</Text>
+            )}
         </ScrollView>
     );
 };

@@ -25,7 +25,7 @@ const MoviesScreen: FC<MoviesScreenProp> = ({ navigation }) => {
     if (!sortedMovies) {
         return (
             <View style={styles.centered}>
-                <Text>No hay peliculas para mostrar.</Text>
+                <Text>No hay películas para mostrar.</Text>
             </View>
         );
     }
@@ -34,7 +34,7 @@ const MoviesScreen: FC<MoviesScreenProp> = ({ navigation }) => {
         <SafeAreaView style={styles.container}>
             <View>
                 <Text style={styles.title}>Movies APP</Text>
-                <Text style={styles.subtitle}>Estrenos</Text>
+                <Text style={styles.subtitle}>Películas en estreno</Text>
                 <FlatList
                     style={styles.movieList}
                     testID="movies-list"
