@@ -4,3 +4,4 @@ export * from './sort-movies';
 export * from './session-storage';
 export * from './alert';
 export * from './format-date';
+export * from './get-axios-error';

@@ -2,6 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 import { getRecommendedMovies } from '../services';
 import { sortMovies } from '../utils';
 import type { Movies } from '../types';
+import { getAxiosError } from '../utils';
+import type { AxiosError } from 'axios';
 
 const useRecommendedMovies = (movieId: number) => {
     const [recommendedMovies, setRecommendedMovies] = useState<Movies>();
@@ -14,9 +16,13 @@ const useRecommendedMovies = (movieId: number) => {
                 setRecommendedMovies(movies);
                 setLoading(false);
             })
-            .catch((error) => {
+            .catch((err: AxiosError) => {
                 setLoading(false);
-                console.log('Error', error);
+                const error = getAxiosError(err);
+                console.error(
+                    'Ha ocurrido un error al obtener el listado de las películas recomendadas:',
+                    error
+                );
             });
     }, [movieId]);
 
