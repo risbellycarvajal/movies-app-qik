@@ -24,6 +24,7 @@ Esta aplicación consta de dos pantallas principales: `listado de películas en 
 
 ## Pre-requisitos
 
+-   [Java](https://www.oracle.com/java/technologies/downloads/)
 -   [Node.js](https://nodejs.org/en/download) >= 18
 -   [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable) >= 4.1.0
 -   [Visual Studio Code](https://code.visualstudio.com) (o cualquier otro IDE)
