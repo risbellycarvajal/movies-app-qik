@@ -1,79 +1,110 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Movies Inc App
 
-# Getting Started
+#### Aplicación para ver un listado de películas en estrenos, listado de películas recomendadas y tambien el detalle de estas películas, con la funcionalidad de poder calificarlas y añadirlas a una lista favoritos.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Tecnologias
 
-## Step 1: Start the Metro Server
+Esta aplicación ha sido creada usando `React Native`, `TypeScript` `React Redux` y `Axios`.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Pantallas
 
-To start Metro, run the following command from the _root_ of your React Native project:
+Esta aplicación consta de dos pantallas principales: `listado de películas en estrenos / listado de películas añadidas a favoritos` y el `detalle de la película con un listado de películas recomendadas` basado en una película seleccionada.
+
+## Caracteristicas
+
+-   Listado de películas en estrenos.
+-   Listado de películas recomendadas en base a una película seleccionada.
+-   Detalles de una película.
+-   Habilidad para poder añadir una película a un listado de favoritos.
+-   Habilidad para calificar o puntuar una película.
+
+**La data mostrada en esta aplicación es obtenida desde [TMBD API](https://developer.themoviedb.org/docs/getting-started).**
+
+# Instalación
+
+## Pre-requisitos
+
+-   [Node.js](https://nodejs.org/en/download) >= 18
+-   [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable) >= 4.1.0
+-   [Visual Studio Code](https://code.visualstudio.com) (o cualquier otro IDE)
+-   [Xcode](https://developer.apple.com/xcode/) (desarrollo en iOS)
+-   [Android Studio](https://developer.android.com/studio?gad_source=1&gclid=Cj0KCQjwqdqvBhCPARIsANrmZhMnH3vZRalBmWfGtEPrOEY3Xm_v8GcRK1IZBTjrWlg8fU4xINH7aa4aAmd_EALw_wcB&gclsrc=aw.ds) (desarrollo en Android)
+-   [API Key](https://developer.themoviedb.org/docs/getting-started) de TBMD API
+
+> **Nota**: Ten en cuenta que este proyecto se creó con el **CLI de React Native** y para poder correr las aplicaciones tanto en iOS como en Android, debes tener previamente configurado tu entorno de desarrollo. Si no esta configurado, puedes seguir la guia [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) hasta el apartado "Creating a new application".
+
+## Ejecutar el proyecto
+
+### Paso 1: Clonar o descargar el repositorio
+
+Para clonar el repositorio puedes simplemente correr el comando `git clone https://github.com/risbellycarvajal/movies-app-qik.git` o `git clone git@github.com:risbellycarvajal/movies-app-qik.git` - para este comando debes configurar una [SSH Key en GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+
+### Paso 2: Instalar las dependencias del proyecto
+
+Para instalar las dependencias necesarias para ejecturar el proyecto debes correr el comando `yarn` o `yarn install` en la carpeta root del proyecto (`/movies-app-qik`).
+
+### Paso 3: Configurar las variables de entorno
+
+Para ejecutar correctamente el proyecto, debes tener configuradas las variables de entorno (archivo `.env`) necesarias del proyecto.
+
+Para configurarlas, puedes tomar como base el archivo `.env.defaults` el cual contiene las variables requeridas. La variable `API_KEY` debe ser generada desde [TMBD API](https://developer.themoviedb.org/docs/getting-started) y luego
+configurarla en el archivo `.env`
+
+Deberias tener un archivo `.env` con la siguiente estructura:
 
 ```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+API_KEY= # TMBD API KEY HERE
+API_BASE_URL=https://api.themoviedb.org/3/movie
+AUTH_API_BASE_URL=https://api.themoviedb.org/3/authentication
+API_BASE_IMAGE_URL=https://image.tmdb.org/t/p/w500
+API_LANGUAGE=es
 ```
 
-## Step 2: Start your Application
+### Paso 4: Ejecutar la aplicación
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
+Para ejecutar la aplicación puedes correr los siguientes comandos desde la carpeta root del proyecto (`/movies-app-qik`).
 
 ```bash
-# using npm
-npm run android
+# Aplicación iOS
+yarn ios
 
-# OR using Yarn
+# Aplicación Android
 yarn android
 ```
 
-### For iOS
+Si todo esta correctamente configurado, deberias ver la aplicación ejecutandose en tu emulador iOS o Android. Tambien puedes correr las aplicaciones directamente desde
+Android Studio y Xcode.
 
-```bash
-# using npm
-npm run ios
+## Scripts
 
-# OR using Yarn
-yarn ios
-```
+Este proyecto contiene algunos scripts que pueden resultar ùtiles al momento de ejecutar o modificar la aplicación.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+### `yarn android`
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+Este comando ejecutará el proyecto en un simulador Android.
 
-## Step 3: Modifying your App
+### `yarn ios`
 
-Now that you have successfully run the app, let's modify it.
+Este comando ejecutará el proyecto en un simulador iOS.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+### `yarn start`
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+Este comando iniciará el servidor de Metro desde una nueva terminal. En esta misma terminal puedes correr los comando `yarn ios` o `yarn android` para ejecutar las aplicaciones en sus respectivos simuladores.
 
-## Congratulations! :tada:
+### `yarn test`
 
-You've successfully run and modified your React Native App. :partying_face:
+Este comando ejecutará todos los tests del proyecto.
 
-### Now what?
+### `yarn clean:android`
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+Este comando realizará una limpieza de la aplicación de android en caso de que haya algún error con alguna
+dependencia al momento de ejecutar la aplicación.
 
-# Troubleshooting
+### `yarn clean:ios`
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+Este comando realizará una limpieza de la aplicación de iOS en caso de que haya algún error con alguna
+dependencia al momento de ejecutar la aplicación.
 
-# Learn More
+Este proyecto está utilizando `eslint` y `prettier` para la identificación de errores y el formateo del código. Tambien utiliza `lint-staged` para verificar errores o formatear el codigo cuando se va a realizar un `commit`.
 
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Este proyecto ha sido creado por **Risbelly Carvajal**.

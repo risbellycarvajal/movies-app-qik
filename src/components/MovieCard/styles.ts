@@ -28,7 +28,9 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         marginTop: 8,
-        fontSize: 16
+        fontSize: 16,
+        height: 40,
+        color: 'black'
     },
     date: {
         fontSize: 14,
