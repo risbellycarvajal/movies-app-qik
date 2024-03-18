@@ -23,13 +23,13 @@ describe('getAxiosError', () => {
         };
 
         const result = getAxiosError(mockedAxiosError as AxiosError);
-        expect(result).toEqual('Ha ocurrido un error');
+        expect(result).toEqual('Intente nuevamente');
     });
 
     it('returns a default error message when the error does not contain a response object', () => {
         const mockedAxiosError = {};
 
         const result = getAxiosError(mockedAxiosError as AxiosError);
-        expect(result).toEqual('Ha ocurrido un error');
+        expect(result).toEqual('Intente nuevamente');
     });
 });
