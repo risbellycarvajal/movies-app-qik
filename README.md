@@ -78,7 +78,7 @@ Si todo esta correctamente configurado, deberias ver la aplicación ejecutandose
 Tambien puedes correr las aplicaciones directamente desde
 Android Studio y Xcode.
 
-> Si al momento de ejecutar la aplicación aparece un error, puedes ejecutar el comando `npx react-native doctor` para saber el estado de tu entorno de desarrollo. Tambien recuerda ejecutar `pod install` dentro de la carpeta `ios` para instalar/actualizar los `pod` en la build de iOS.
+> Si al momento de ejecutar la aplicación aparece un error, puedes ejecutar el comando `npx react-native doctor` para saber el estado de tu entorno de desarrollo. Tambien recuerda ejecutar `pod install` dentro de la carpeta `ios` para instalar/actualizar los `pods` en la build de iOS.
 
 ## Scripts
 
