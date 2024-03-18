@@ -107,12 +107,16 @@ dependencia al momento de ejecutar la aplicación.
 
 Este proyecto está utilizando `eslint` y `prettier` para la identificación de errores y el formateo del código. Tambien utiliza `lint-staged` para verificar errores o formatear el codigo cuando se va a realizar un `commit`.
 
-## Imágenes de la aplicaciön
+## Imágenes de la aplicación
 
-![pantalla principal - peliculas estrenos](https://imgur.com/FGkFBwN)
-![pantalla principal - peliculas favoritas](https://imgur.com/ccdGKFG)
-![detalle pelicula](https://imgur.com/d3oLOVg)
-![detalle pelicula2](https://imgur.com/dEF6RQh)
-![detalle pelicula3](https://imgur.com/zhni8Pc)
+![pantalla principal - peliculas estrenos](https://i.ibb.co/Nyk4P9P/Screenshot-2024-03-18-at-2-08-31-AM.png)
+
+![pantalla principal - peliculas favoritas](https://i.ibb.co/jzgRsyZ/Screenshot-2024-03-18-at-2-09-15-AM.png)
+
+![detalle pelicula](https://i.ibb.co/nmbvnCp/Screenshot-2024-03-18-at-2-09-29-AM.png)
+
+![detalle pelicula2](https://i.ibb.co/vJTT78b/Screenshot-2024-03-18-at-2-09-49-AM.png)
+
+![detalle pelicula3](https://i.ibb.co/kSHQqWL/Screenshot-2024-03-18-at-2-10-04-AM.png)
 
 Este proyecto ha sido creado por **Risbelly Carvajal**.
