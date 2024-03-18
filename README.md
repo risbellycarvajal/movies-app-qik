@@ -31,7 +31,7 @@ Esta aplicación consta de dos pantallas principales: `listado de películas en 
 -   [Android Studio](https://developer.android.com/studio?gad_source=1&gclid=Cj0KCQjwqdqvBhCPARIsANrmZhMnH3vZRalBmWfGtEPrOEY3Xm_v8GcRK1IZBTjrWlg8fU4xINH7aa4aAmd_EALw_wcB&gclsrc=aw.ds) (desarrollo en Android)
 -   [API Key](https://developer.themoviedb.org/docs/getting-started) de TBMD API
 
-> **Nota**: Ten en cuenta que este proyecto se creó con el **CLI de React Native** y para poder correr las aplicaciones tanto en iOS como en Android, debes tener previamente configurado tu entorno de desarrollo. Si no esta configurado, puedes seguir la guia [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) hasta el apartado "Creating a new application".
+> **Nota**: Ten en cuenta que este proyecto se creó con el **CLI de React Native** y para poder correr las aplicaciones tanto en iOS como en Android, debes tener previamente configurado tu entorno de desarrollo. Si no esta configurado, puedes seguir la guia [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup?guide=native) hasta el apartado "Creating a new application".
 
 ## Ejecutar el proyecto
 
